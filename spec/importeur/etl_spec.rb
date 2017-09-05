@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 RSpec.describe Importeur::ETL do
   subject(:etl) do
     described_class.new(

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Importeur
   class ETL
     def initialize(extractor:, transformer:, loader:)

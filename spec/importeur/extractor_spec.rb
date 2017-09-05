@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-#
+
 RSpec.describe Importeur::Extractor do
   subject(:extractor) { described_class.new(data_source, cursor, cursor_key) }
 
