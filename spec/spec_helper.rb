@@ -2,6 +2,9 @@
 
 require 'bundler/setup'
 require 'importeur'
+require 'pry'
+
+Dir[Importeur.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
