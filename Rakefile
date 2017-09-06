@@ -6,4 +6,6 @@ require 'rubocop-ci'
 
 RSpec::Core::RakeTask.new(:spec)
 
+load 'lib/task/db.rake'
+
 task default: :spec
