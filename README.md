@@ -72,6 +72,8 @@ In order to be able to run the tests, a Postgres database named
 `importeur-test` is needed, accessible by the current system user.
 (TODO: Support other configurations?)
 
+We run `rake rubocop` to make sure, everything looks good.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
