@@ -11,6 +11,7 @@ jobs:
         environment:
           DATABASE_URL: 'postgres://importeur@localhost/importeur'
           CAKE_DATA_BUCKET: 'ad2games-cake-data-test-fixtures'
+          AWS_REGION: 'eu-west-1'
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
