@@ -4,6 +4,7 @@ require 'importeur/version'
 require 'importeur/etl'
 require 'importeur/extractor'
 require 'importeur/active_record_postgres_loader'
+require 'importeur/combined_bucket_cake_feeds'
 
 module Importeur
   def self.root
