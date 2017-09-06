@@ -31,7 +31,7 @@ RSpec.describe 'Import BucketCake data into Postgres', :vcr do
 
   # rubocop:disable RSpec/BeforeAfterAll
   before(:all) do
-    ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'importeur-test')
+    ActiveRecord::Base.establish_connection(ENV.fetch('DATABASE_URL'))
     ActiveRecord::Migration.verbose = false
     ActiveRecord::Schema.define(version: 1) do
       drop_table :affiliates if table_exists?(:affiliates)
