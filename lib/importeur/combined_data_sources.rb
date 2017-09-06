@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Importeur
-  class CombinedBucketCakeFeeds
+  class CombinedDataSources
     def initialize(*entity_classes)
       @entity_classes = entity_classes
     end

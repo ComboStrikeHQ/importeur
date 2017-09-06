@@ -2,7 +2,7 @@
 
 require 'bucket_cake'
 
-RSpec.describe Importeur::CombinedBucketCakeFeeds do
+RSpec.describe Importeur::CombinedDataSources do
   subject(:combined_feed) do
     described_class.new(BucketCake::Entities::Affiliates, BucketCake::Entities::Advertisers)
   end
