@@ -10,6 +10,7 @@ jobs:
       - image: circleci/ruby:2.4.1-node-browsers
         environment:
           DATABASE_URL: 'postgres://importeur@localhost/importeur'
+          CAKE_DATA_BUCKET: 'ad2games-cake-data-test-fixtures'
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
