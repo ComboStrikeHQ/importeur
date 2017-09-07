@@ -1,0 +1,174 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api-test.appnexus.com/auth
+    body:
+      encoding: UTF-8
+      string: '{"auth":{"username":"appnexus-username","password":"appnexus-password"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0;no-cache
+      Content-Length:
+      - '374'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Sep 2017 15:23:27 GMT
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - HBFAPI_SESSID=hbapi%3A110699%3A32b0224d7e104%3Anym2; Path=/
+      X-An-Requestid:
+      - cf8455a7f4514b80
+      X-Route:
+      - "/auth"
+      X-Route-Time:
+      - '409'
+    body:
+      encoding: UTF-8
+      string: '{"response":{"status":"OK","token":"hbapi:110699:32b0224d7e104:nym2","dbg_info":{"instance":"01.hbapi.test155088.nym2","slave_hit":false,"db":"master","awesomesauce_cache_used":false,"count_cache_used":false,"uuid":"9ee6a946-7f5b-5224-82e6-9f938dce1263","warnings":[],"time":396.38209342957,"start_microtime":1504797807.9508,"version":"1.17.673","output_term":"not_found"}}}'
+    http_version: 
+  recorded_at: Thu, 07 Sep 2017 15:23:26 GMT
+- request:
+    method: get
+    uri: http://api-test.appnexus.com/advertiser?num_elements=1&start_element=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Authorization:
+      - hbapi:110699:32b0224d7e104:nym2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0;no-cache
+      Content-Length:
+      - '1583'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Sep 2017 15:23:28 GMT
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - HBFAPI_SESSID=hbapi%3A110699%3A32b0224d7e104%3Anym2; Path=/
+      - last_write[dwapi_serviceadvertiser_2445]=1504797808%3A2b9080569d82e36731f61aa0389ec364cfe9ab31;
+        Expires=Thu, 07 Sep 2017 15:23:43 GMT; Path=/; Domain=envnxs.net; HTTPOnly
+      X-An-Requestid:
+      - 28b5ee3097f049c1
+      X-Count-Read:
+      - user:2,member:0,serviceHostUser:1,serviceHostMember:0,hostUser:1,hostMember:0,ip:0
+      X-Count-Write:
+      - user:0,member:0,serviceHostUser:0,serviceHostMember:0,hostUser:0,hostMember:0,ip:0
+      X-Rate-Limits:
+      - cru=2;crm=2;cwu=0;cwm=0;lru=1000;lrm=1000;lwu=1000;lwm=1000
+      X-Ratelimit-Read:
+      - '1000'
+      X-Ratelimit-Service:
+      - 1000-Default
+      X-Ratelimit-System:
+      - 1000-Default
+      X-Ratelimit-Write:
+      - '1000'
+      X-Route:
+      - "/advertiser"
+      X-Route-Time:
+      - '46'
+    body:
+      encoding: UTF-8
+      string: '{"response":{"status":"OK","start_element":0,"num_elements":1,"advertisers":[{"id":1,"name":"Some Company","state":"active"}]}}'
+    http_version: 
+  recorded_at: Thu, 07 Sep 2017 15:23:26 GMT
+- request:
+    method: get
+    uri: http://api-test.appnexus.com/advertiser?num_elements=1&start_element=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Authorization:
+      - hbapi:110699:32b0224d7e104:nym2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0;no-cache
+      Content-Length:
+      - '1582'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Sep 2017 15:23:28 GMT
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Set-Cookie:
+      - HBFAPI_SESSID=hbapi%3A110699%3A32b0224d7e104%3Anym2; Path=/
+      X-An-Requestid:
+      - b5b4c137fa8242be
+      X-Count-Read:
+      - user:3,member:0,serviceHostUser:2,serviceHostMember:0,hostUser:2,hostMember:0,ip:0
+      X-Count-Write:
+      - user:0,member:0,serviceHostUser:0,serviceHostMember:0,hostUser:0,hostMember:0,ip:0
+      X-Rate-Limits:
+      - cru=3;crm=3;cwu=0;cwm=0;lru=1000;lrm=1000;lwu=1000;lwm=1000
+      X-Ratelimit-Read:
+      - '1000'
+      X-Ratelimit-Service:
+      - 1000-Default
+      X-Ratelimit-System:
+      - 1000-Default
+      X-Ratelimit-Write:
+      - '1000'
+      X-Route:
+      - "/advertiser"
+      X-Route-Time:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"response":{"status":"OK","start_element":1,"num_elements":1,"advertisers":[]}}'
+    http_version: 
+  recorded_at: Thu, 07 Sep 2017 15:23:26 GMT
+recorded_with: VCR 3.0.3

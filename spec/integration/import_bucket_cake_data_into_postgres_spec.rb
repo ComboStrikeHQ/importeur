@@ -2,7 +2,7 @@
 
 require 'bucket_cake'
 
-RSpec.describe 'Import BucketCake data into Postgres', :vcr do
+RSpec.describe 'Import BucketCake data into Postgres', :vcr, :db do
   subject(:etl) do
     Importeur::ETL.new(
       extractor: Importeur::Extractor.new(
@@ -22,31 +22,6 @@ RSpec.describe 'Import BucketCake data into Postgres', :vcr do
   let(:cursor) do
     instance_double(Cursor)
   end
-
-  class Affiliate < ActiveRecord::Base
-    def self.with_deleted
-      self
-    end
-  end
-
-  # rubocop:disable RSpec/BeforeAfterAll
-  before(:all) do
-    ActiveRecord::Base.establish_connection(ENV.fetch('DATABASE_URL'))
-    ActiveRecord::Migration.verbose = false
-    ActiveRecord::Schema.define(version: 1) do
-      drop_table :affiliates if table_exists?(:affiliates)
-      create_table :affiliates do |t|
-        t.string :name
-        t.datetime :deleted_at
-        t.datetime :imported_at
-      end
-    end
-
-    DatabaseCleaner.strategy = :transaction
-  end
-  # rubocop:enable RSpec/BeforeAfterAll
-
-  around { |e| DatabaseCleaner.cleaning(&e) }
 
   it 'imports data' do
     expect(cursor).to receive(:read).with('affiliates').and_return(1)

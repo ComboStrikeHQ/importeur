@@ -4,7 +4,8 @@ require 'importeur/version'
 require 'importeur/etl'
 require 'importeur/extractor'
 require 'importeur/active_record_postgres_loader'
-require 'importeur/combined_data_sources'
+require 'importeur/data_sources/combined'
+require 'importeur/data_sources/appnexus'
 
 module Importeur
   def self.root
