@@ -19,7 +19,7 @@ RSpec.describe Importeur::DataSources::Appnexus do
   end
 
   describe '#dataset_unique_id' do
-    it 'returns nil' do
+    it 'returns a hash' do
       expect(data_source.dataset_unique_id).to eq('7f112e7b6410e0257d44f0da280ee284')
     end
   end
