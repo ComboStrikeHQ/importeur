@@ -40,10 +40,13 @@ VCR.configure do |c|
 
   c.default_cassette_options = { allow_unused_http_interactions: false }
 
+  c.before_record do |i|
+    i.request.headers.delete('X-Auth-Token')
+    i.response.headers.delete('Set-Cookie')
+    i.response.headers.delete('X-Auth-Token')
+  end
+
   c.filter_sensitive_data('aws-access-key-id') { ENV['AWS_ACCESS_KEY_ID'] }
   c.filter_sensitive_data('appnexus-username') { ENV['APPNEXUS_USERNAME'] }
   c.filter_sensitive_data('appnexus-password') { ENV['APPNEXUS_PASSWORD'] }
-  c.filter_sensitive_data('rocketfuel-api-auth-token') do
-    ENV['ROCKETFUEL_API_AUTH_TOKEN']
-  end
 end
