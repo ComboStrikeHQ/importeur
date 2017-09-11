@@ -33,7 +33,7 @@ RSpec.describe 'Import Rocketfuel data into Postgres', :vcr, :db do
   end
 
   let(:transformer) do
-    -> (entity) { { id: entity.id, name: entity.name } }
+    ->(entity) { { id: entity.id, name: entity.name } }
   end
 
   let(:cursor) do
@@ -48,7 +48,8 @@ RSpec.describe 'Import Rocketfuel data into Postgres', :vcr, :db do
 
   it 'imports data' do
     expect(cursor).to receive(:read).with('rocketfuel-advertisers').and_return(1)
-    expect(cursor).to receive(:write).with('rocketfuel-advertisers', 'ef804f1ad6974ac5201b39effa44cb14')
+    expect(cursor).to receive(:write)
+      .with('rocketfuel-advertisers', 'ef804f1ad6974ac5201b39effa44cb14')
 
     etl.call
 
