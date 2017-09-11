@@ -2,7 +2,7 @@
 
 module Importeur
   module DataSources
-    class RocketFuel
+    class Rocketfuel
       def initialize(rocketfuel_service)
         @rocketfuel_service = rocketfuel_service
       end
