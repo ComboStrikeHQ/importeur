@@ -41,4 +41,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bucket_cake'
   spec.add_development_dependency 'pg'
   spec.add_development_dependency 'database_cleaner'
+  spec.add_development_dependency 'appnexusapi'
 end
