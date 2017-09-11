@@ -5,8 +5,8 @@ require 'rocketfuel_api'
 RSpec.describe Importeur::DataSources::Rocketfuel do
   subject(:data_source) { described_class.new(rocketfuel_service) }
 
-  let(:rocketfuel_service) { instance_double(RocketfuelApi::AdvertiserService) }
-  let(:resource_resource)  { instance_double(RocketfuelApi::Resource) }
+  let(:rocketfuel_service) { instance_double(RocketfuelApi::Service::Company) }
+  let(:resource_resource)  { instance_double(RocketfuelApi::Resource::Company) }
 
   before do
     expect(rocketfuel_service).to receive(:get_all).and_return([resource_resource])
@@ -20,7 +20,7 @@ RSpec.describe Importeur::DataSources::Rocketfuel do
 
   describe '#dataset_unique_id' do
     it 'returns a hash' do
-      expect(data_source.dataset_unique_id).to eq('7f112e7b6410e0257d44f0da280ee284')
+      expect(data_source.dataset_unique_id).to eq('a321d32f28c72c4723523a586f0424d6')
     end
   end
 end

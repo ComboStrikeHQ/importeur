@@ -16,15 +16,15 @@ RSpec.describe 'Import Rocketfuel data into Postgres', :vcr, :db do
   end
 
   let(:rocketfuel_service) do
-    RocketfuelApi::AdvertiserService.new(rocketfuel_connection)
+    RocketfuelApi::Service::Company.new(rocketfuel_connection)
   end
 
   let(:rocketfuel_connection) do
+    # TODO: Change to production API endpoint
     RocketfuelApi::Connection.new(
-      'username' => ENV.fetch('ROCKETFUEL_USERNAME'),
-      'password' => ENV.fetch('ROCKETFUEL_PASSWORD'),
-      'uri'      => 'http://api-test.rocketfuel.com',
-      'logger'   => Logger.new('/dev/null')
+      uri:        'https://api-sandbox.rocketfuel.com/2016',
+      auth_token: ENV.fetch('ROCKETFUEL_API_AUTH_TOKEN'),
+      logger:     Logger.new('/dev/null')
     )
   end
 
@@ -44,13 +44,13 @@ RSpec.describe 'Import Rocketfuel data into Postgres', :vcr, :db do
 
   it 'imports data' do
     expect(cursor).to receive(:read).with('advertisers').and_return(1)
-    expect(cursor).to receive(:write).with('advertisers', '696e99425079fc71e055249ca746d05d')
+    expect(cursor).to receive(:write).with('advertisers', '88e0573412c07ade17bb6e5b02635a05')
 
     etl.call
 
     expect(Affiliate.first).to have_attributes(
       id: 1,
-      name: 'Some Company'
+      name: 'Ad2Games DE'
     )
   end
 end

@@ -44,7 +44,7 @@ RSpec.describe 'Import AppNexus data into Postgres', :vcr, :db do
 
   it 'imports data' do
     expect(cursor).to receive(:read).with('advertisers').and_return(1)
-    expect(cursor).to receive(:write).with('advertisers', '696e99425079fc71e055249ca746d05d')
+    expect(cursor).to receive(:write).with('advertisers', '88e0573412c07ade17bb6e5b02635a05')
 
     etl.call
 
