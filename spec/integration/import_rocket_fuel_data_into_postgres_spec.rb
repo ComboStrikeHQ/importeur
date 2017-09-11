@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'rocketfuelapi'
+require 'rocketfuel_api'
 
-RSpec.describe 'Import RocketFuel data into Postgres', :vcr, :db do
+RSpec.describe 'Import Rocketfuel data into Postgres', :vcr, :db do
   subject(:etl) do
     Importeur::ETL.new(
       extractor: Importeur::Extractor.new(rocketfuel_data_source, cursor, 'advertisers'),
@@ -12,24 +12,24 @@ RSpec.describe 'Import RocketFuel data into Postgres', :vcr, :db do
   end
 
   let(:rocketfuel_data_source) do
-    Importeur::DataSources::rocketfuel.new(rocketfuel_service)
+    Importeur::DataSources::Rocketfuel.new(rocketfuel_service)
   end
 
   let(:rocketfuel_service) do
-    rocketfuelApi::AdvertiserService.new(rocketfuel_connection)
+    RocketfuelApi::AdvertiserService.new(rocketfuel_connection)
   end
 
   let(:rocketfuel_connection) do
-    rocketfuelApi::Connection.new(
+    RocketfuelApi::Connection.new(
       'username' => ENV.fetch('ROCKETFUEL_USERNAME'),
       'password' => ENV.fetch('ROCKETFUEL_PASSWORD'),
-      'uri' => 'http://api-test.rocketfuel.com',
-      'logger' => Logger.new('/dev/null')
+      'uri'      => 'http://api-test.rocketfuel.com',
+      'logger'   => Logger.new('/dev/null')
     )
   end
 
   let(:transformer) do
-    ->(entity) { { id: entity.id, name: entity.name } }
+    -> (entity) { { id: entity.id, name: entity.name } }
   end
 
   let(:cursor) do

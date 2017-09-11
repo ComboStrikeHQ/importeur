@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-# require 'soapy-rocketfuel'
+require 'rocketfuel_api'
 
-RSpec.describe Importeur::DataSources::RocketFuel do
-  subject(:data_source) { described_class.new(appnexus_service) }
+RSpec.describe Importeur::DataSources::Rocketfuel do
+  subject(:data_source) { described_class.new(rocketfuel_service) }
 
-  let(:appnexus_service) { instance_double(AppnexusApi::AdvertiserService) }
-  let(:appnexus_resource) { instance_double(AppnexusApi::Resource) }
+  let(:rocketfuel_service) { instance_double(RocketfuelApi::AdvertiserService) }
+  let(:resource_resource)  { instance_double(RocketfuelApi::Resource) }
 
   before do
-    expect(appnexus_service).to receive(:get_all).and_return([appnexus_resource])
+    expect(rocketfuel_service).to receive(:get_all).and_return([resource_resource])
   end
 
   describe '#items' do
     it 'returns items' do
-      expect(data_source.items).to eq([appnexus_resource])
+      expect(data_source.items).to eq([resource_resource])
     end
   end
 
   describe '#dataset_unique_id' do
-    it 'returns nil' do
+    it 'returns a hash' do
       expect(data_source.dataset_unique_id).to eq('7f112e7b6410e0257d44f0da280ee284')
     end
   end
