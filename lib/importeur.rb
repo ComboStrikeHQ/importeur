@@ -6,6 +6,7 @@ require 'importeur/extractor'
 require 'importeur/active_record_postgres_loader'
 require 'importeur/data_sources/combined'
 require 'importeur/data_sources/appnexus'
+require 'importeur/data_sources/rocketfuel'
 
 module Importeur
   def self.root

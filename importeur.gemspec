@@ -42,4 +42,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pg'
   spec.add_development_dependency 'database_cleaner'
   spec.add_development_dependency 'appnexusapi'
+  # TODO: Move API code to gem?
+  # spec.add_development_dependency 'soapy-rocketfuel'
 end
