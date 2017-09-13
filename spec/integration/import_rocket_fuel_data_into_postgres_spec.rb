@@ -25,7 +25,7 @@ RSpec.describe 'Import Rocketfuel data into Postgres', :vcr, :db do
 
   let(:rocketfuel_connection) do
     RocketfuelApi::Connection.new(
-      uri:        'https://api-sandbox.rocketfuel.com/2016',
+      uri:        ENV.fetch('ROCKETFUEL_API_URI'),
       auth_token: ENV.fetch('ROCKETFUEL_API_AUTH_TOKEN'),
       logger:     Logger.new('/dev/null')
     )
