@@ -42,4 +42,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pg'
   spec.add_development_dependency 'database_cleaner'
   spec.add_development_dependency 'appnexusapi'
+  spec.add_development_dependency 'rocketfuel_api'
 end
