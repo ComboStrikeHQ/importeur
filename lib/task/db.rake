@@ -12,12 +12,13 @@ task :create_test_db do
   conn = PG.connect(
     host: uri.hostname,
     port: uri.port,
-    dbname: 'postgres',
+    dbname: uri.scheme,
     user: uri.user,
     password: uri.password
   )
-  conn.exec('DROP DATABASE IF EXISTS importeur_test')
-  conn.exec('CREATE DATABASE importeur_test')
+  database = uri.path[1..-1]
+  conn.exec("DROP DATABASE IF EXISTS #{database}")
+  conn.exec("CREATE DATABASE #{database}")
 
   ActiveRecord::Base.establish_connection(ENV.fetch('DATABASE_URL'))
   ActiveRecord::Migration.verbose = false

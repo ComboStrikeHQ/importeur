@@ -68,9 +68,9 @@ Example use-cases can be found in the `spec/integration` directory.
 
 ## Development
 
-In order to be able to run the tests, a Postgres database named 
-`importeur_test` is needed. Having a PostgreSQL user with CREATEDB permission,
-create `.env.test` file with your DATABASE_URL configuration, for example:
+In order to be able to run the tests, a Postgres database is needed. Having 
+a PostgreSQL user with CREATEDB permission, create `.env.test` file with your 
+DATABASE_URL configuration, for example:
 
 `DATABASE_URL: 'postgres://user:password@localhost:5432/importeur_test'`
 
