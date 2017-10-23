@@ -3,8 +3,9 @@
 module Importeur
   module DataSources
     class Rocketfuel
-      def initialize(rocketfuel_service)
+      def initialize(rocketfuel_service, params = {})
         @rocketfuel_service = rocketfuel_service
+        @params = params
       end
 
       def dataset_unique_id
@@ -14,12 +15,12 @@ module Importeur
       end
 
       def items
-        @items ||= rocketfuel_service.get_all
+        @items ||= rocketfuel_service.get_all(params)
       end
 
       private
 
-      attr_reader :rocketfuel_service
+      attr_reader :rocketfuel_service, :params
     end
   end
 end
