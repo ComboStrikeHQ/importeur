@@ -5,17 +5,20 @@ require 'rocketfuel_api'
 RSpec.describe Importeur::DataSources::Rocketfuel do
   subject(:data_source) { described_class.new(rocketfuel_service) }
 
-  let(:rocketfuel_service) { instance_double(RocketfuelApi::Service::Company) }
-  let(:resource_resource)  { instance_double(RocketfuelApi::Resource::Company) }
+  let(:rocketfuel_service)        { instance_double(RocketfuelApi::Service::Company) }
+  let(:company_resource)          { instance_double(RocketfuelApi::Resource::Company) }
+  let(:specific_company_resource) { instance_double(RocketfuelApi::Resource::Company) }
+
+  let(:params) { { 'filter' => 'value' } }
 
   before do
-    allow(rocketfuel_service).to receive(:get_all).and_return([resource_resource])
+    allow(rocketfuel_service).to receive(:get_all).with({}).and_return([company_resource])
+    allow(rocketfuel_service).to receive(:get_all).with(params).and_return([specific_company_resource])
   end
 
   describe '#items' do
     it 'returns items' do
-      expect(data_source.items).to eq([resource_resource])
-      expect(rocketfuel_service).to have_received(:get_all).with({})
+      expect(data_source.items).to eq([company_resource])
     end
   end
 
@@ -28,11 +31,8 @@ RSpec.describe Importeur::DataSources::Rocketfuel do
   context 'with params' do
     subject(:data_source) { described_class.new(rocketfuel_service, params) }
 
-    let(:params) { { 'filter' => 'value' } }
-
     it 'pass params to #get_all and returns items' do
-      expect(data_source.items).to eq([resource_resource])
-      expect(rocketfuel_service).to have_received(:get_all).with(params)
+      expect(data_source.items).to eq([specific_company_resource])
     end
   end
 end
