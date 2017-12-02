@@ -42,8 +42,8 @@ RSpec.describe Importeur::ActiveRecordPostgresLoader do
     expect(lookup_relation)
       .to receive(:joins)
       .with(<<-SQL)
-        LEFT JOIN (SELECT unnest(ARRAY[1,2]::int[]) AS primary_key) AS imported
-               ON imported.primary_key = cake_offers.id
+        INNER JOIN (SELECT unnest(ARRAY[1,2]::int[]) AS primary_key) AS imported
+                  ON imported.primary_key = cake_offers.id
       SQL
       .and_return(records)
     expect(Time).to receive(:now).and_return(now)
@@ -64,7 +64,7 @@ RSpec.describe Importeur::ActiveRecordPostgresLoader do
       .to receive(:joins)
       .with(<<-SQL)
         LEFT JOIN (SELECT unnest(ARRAY[1,2]::int[]) AS primary_key) AS imported
-               ON imported.primary_key = cake_offers.id
+                  ON imported.primary_key = cake_offers.id
       SQL
       .and_return(deletion_relation)
     expect(deletion_relation)

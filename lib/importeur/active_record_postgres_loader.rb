@@ -44,7 +44,7 @@ module Importeur
     def records_for_batch(batch_ids)
       model
         .with_deleted
-        .joins(batch_lookup_join_sql(batch_ids))
+        .joins(batch_lookup_join_sql('INNER', batch_ids))
         .index_by(&primary_key)
     end
 
@@ -52,15 +52,15 @@ module Importeur
       # Basically `self.class.model.where.not(primary_key => imported_ids)`, but
       # more efficient in this case.
       model
-        .joins(batch_lookup_join_sql(imported_ids))
+        .joins(batch_lookup_join_sql('LEFT', imported_ids))
         .where('imported.primary_key' => nil)
         .delete_all
     end
 
-    def batch_lookup_join_sql(ids)
+    def batch_lookup_join_sql(kind, ids)
       <<-SQL
-        LEFT JOIN (SELECT unnest(ARRAY[#{ids.join(',')}]::int[]) AS primary_key) AS imported
-               ON imported.primary_key = #{model.table_name}.#{primary_key}
+        #{kind} JOIN (SELECT unnest(ARRAY[#{ids.join(',')}]::int[]) AS primary_key) AS imported
+                  ON imported.primary_key = #{model.table_name}.#{primary_key}
       SQL
     end
   end
