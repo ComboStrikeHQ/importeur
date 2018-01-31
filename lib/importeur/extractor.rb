@@ -21,7 +21,7 @@ module Importeur
 
     private
 
-    attr_reader :current_dataset_id, :cursor, :cursor_key, :data_source
+    attr_reader :cursor, :cursor_key, :data_source
 
     def has_new_data?
       last_known_id = cursor.read(cursor_key)

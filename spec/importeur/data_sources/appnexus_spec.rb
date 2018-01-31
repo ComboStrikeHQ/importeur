@@ -9,7 +9,7 @@ RSpec.describe Importeur::DataSources::Appnexus do
   let(:appnexus_resource) { instance_double(AppnexusApi::Resource) }
 
   before do
-    expect(appnexus_service).to receive(:get_all).and_return([appnexus_resource])
+    allow(appnexus_service).to receive(:get_all).and_return([appnexus_resource])
   end
 
   describe '#items' do
