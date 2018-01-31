@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: head
-    uri: https://ad2games-cake-data-test-fixtures.s3-eu-west-1.amazonaws.com/affiliates/latest.gz
+    uri: https://ad2games-cake-data-test-fixtures.s3.eu-west-1.amazonaws.com/affiliates/latest.gz
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -12,16 +12,16 @@ http_interactions:
       Accept-Encoding:
       - ''
       User-Agent:
-      - aws-sdk-ruby3/3.2.0 ruby/2.4.1 x86_64-linux aws-sdk-s3/1.1.0
+      - aws-sdk-ruby3/3.11.0 ruby/2.4.2 x86_64-linux aws-sdk-s3/1.8.0
       Host:
-      - ad2games-cake-data-test-fixtures.s3-eu-west-1.amazonaws.com
+      - ad2games-cake-data-test-fixtures.s3.eu-west-1.amazonaws.com
       X-Amz-Date:
-      - 20170905T152346Z
+      - 20171201T173910Z
       X-Amz-Content-Sha256:
       - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=aws-access-key-id/20170905/eu-west-1/s3/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=8698c6c5361fb06cb76e22be01f1760d637f1690f68e66b38cfceff083410118
+      - AWS4-HMAC-SHA256 Credential=aws-access-key-id/20171201/eu-west-1/s3/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=d2abf035d5acc122c3f12da2297518c0f984c779928a3b4248a967d08f91c323
       Content-Length:
       - '0'
       Accept:
@@ -32,11 +32,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - RlGrb9HiGe8XcKuvZCG814VAQLCzv0TnoNClTwc4kPjZBiKywqxIit7pt1uoJsocEQBqrXTZ+5M=
+      - gFBPqb6WbdiKziYuhAFtX9dSn5MiLCAyaV2mdLWjJysXz1eJ55bORUexTgN7hOqV22G3RyrhrPY=
       X-Amz-Request-Id:
-      - 64DFB0A1AC2EF42A
+      - 11591E1E444832B8
       Date:
-      - Tue, 05 Sep 2017 15:23:47 GMT
+      - Fri, 01 Dec 2017 17:39:11 GMT
       Last-Modified:
       - Thu, 20 Jul 2017 07:05:59 GMT
       Etag:
@@ -53,10 +53,10 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 05 Sep 2017 15:23:46 GMT
+  recorded_at: Fri, 01 Dec 2017 17:39:10 GMT
 - request:
     method: get
-    uri: https://ad2games-cake-data-test-fixtures.s3-eu-west-1.amazonaws.com/affiliates/latest.gz
+    uri: https://ad2games-cake-data-test-fixtures.s3.eu-west-1.amazonaws.com/affiliates/latest.gz
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -66,16 +66,16 @@ http_interactions:
       Accept-Encoding:
       - ''
       User-Agent:
-      - aws-sdk-ruby3/3.2.0 ruby/2.4.1 x86_64-linux aws-sdk-s3/1.1.0
+      - aws-sdk-ruby3/3.11.0 ruby/2.4.2 x86_64-linux aws-sdk-s3/1.8.0
       Host:
-      - ad2games-cake-data-test-fixtures.s3-eu-west-1.amazonaws.com
+      - ad2games-cake-data-test-fixtures.s3.eu-west-1.amazonaws.com
       X-Amz-Date:
-      - 20170905T152346Z
+      - 20171201T173910Z
       X-Amz-Content-Sha256:
       - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=aws-access-key-id/20170905/eu-west-1/s3/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=0cc48d5af1390a7c182120d42fe852755309fa6b2b12a8e60f7b6dfb45267056
+      - AWS4-HMAC-SHA256 Credential=aws-access-key-id/20171201/eu-west-1/s3/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=22375326a84757225f1647a67a7d70acd15b426007f734be4ba1cffd2e96e469
       Content-Length:
       - '0'
       Accept:
@@ -86,11 +86,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - yiTdNoWp/xJ7h+kmORJBsSKhPu2uHQXuC4zH6VBbFOahiaTUlnpaT4c7zo+XeBIZ/gSuXylsFRo=
+      - F0eMXJC9xj6JrJ75cLJHB2gaazq5xRhcoAegTCrDWsmhuDJJ6sxkYgzXGjaUbXkaFQjoyEIxyZc=
       X-Amz-Request-Id:
-      - A151CF46AD1B3A9A
+      - 2B036AA6876B4381
       Date:
-      - Tue, 05 Sep 2017 15:23:47 GMT
+      - Fri, 01 Dec 2017 17:39:11 GMT
       Last-Modified:
       - Thu, 20 Jul 2017 07:05:59 GMT
       Etag:
@@ -108,5 +108,5 @@ http_interactions:
       string: !binary |-
         H4sIAAAAAAAA/4SUT3PrJhTF9/0q3SApSuMlYEAothKhCAQ7IaVgG/15z7EV+dN3nNe+eYtOC8s7c++Z3z3n4v38O/FotHHh27h2WpmhVZ+zbkRgbuLQcyZYWI0qAPeOfwf7isT0tB96b5W8cSJCP8izTVDoxv037BwiziCdiLkf6hWNBegGGfrtlHWJWI2SYH/iRMcBvNcT7RLheyYrmMxzR6dMx5vIjmJ9V7xqMwG67XTdxfJBq2ixrL7YJB9brzkUnJaxDzo+tzhB/l1FwY5itoO5dtOC8C6nxAOOEDelKo42kZceo0Kr1JtYrhz7shvCh27y9FlMBYa6wjUdzBDOraLAVJyZeHPU6iM8u3C0cQr0ncGWryQToUsENI33tkFnU6VHG4NH1Ii5Z5+hdCaxSf69Y/4ZsSJY9lnB2Ph3OuWtim6myeNWFUE7M1uV3jlOsOHUDhtgmuJxuxw9FPz5n/k9k7eec4SWO9tiWxP2DMWebz85K5VIdJMHBk8HVIcPrfpwcsRhWlcZCZeeydUOEnCs3VucnluVBk7osWchbhsxm+algmLisSMVlWY2TF45+Xu3GHy8HlCmVRS6dEJkmbCU+2or5aVtRDAYvfWMAtO8eFjCHw8H+K3Mitv+64PXPzhCoLjaBnk7Do+w9EA3/mgZvXVPHKFG+HcWTiskCDhCWpV7e+GIuMNrh3ihVbmamH6YZu/kncPLhHCWBzPItRvo+cmRHYb7CoHoakcx2Wx8hKK++wPlaMql3DvBNmfL6MpdIWtQYXio7772NaMpZ7/uHM32gK5mMKE79DfOiqgb82CHIj1Ajk6QowFyNEGOzo4P2H1OfSaWl8PTtWPhwailpcyDPoOPu3Wz2KQAeqDHdv3yx5VnlwfoMgynEmGv+WlcKqL6q47pd1MhbzITulHMXSxX4gl/oHW1ZT/rP3T5Sf5XZp/vQgXvxJj7XpVuV6Fb3xRLq4rZJvLGM3kzDf8wjAL9xrM7O3grl2I7Sfy6/ThYTomLaN/k147V13KQq2XhsrjnP2E5KZznT8TTX2aL2DQ5aJsidJ6/4RcqiUt/1m1sBtNwt/8f3dyd+be1rtBYRHqggzlMDsO7h82qG3niGLgukbeOhWOrNlG3oujOaafu94Os5Csbm8yyzUGrxdWDPLVNHnRSPtLyuESblxUJXohGrvdbtQN56IbP2Z4nnI1ibaONN9t8/PL6mn7lziq6trEErUrH3ZCGvoAY9g7Dd4jh+4RpeXiNHuJ/73vlGKn0es/ub38FAAD//70q5lNlBQAA
     http_version: 
-  recorded_at: Tue, 05 Sep 2017 15:23:46 GMT
+  recorded_at: Fri, 01 Dec 2017 17:39:10 GMT
 recorded_with: VCR 3.0.3

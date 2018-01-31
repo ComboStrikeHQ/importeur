@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: head
-    uri: https://ad2games-cake-data-test-fixtures.s3-eu-west-1.amazonaws.com/affiliates/latest.gz
+    uri: https://ad2games-cake-data-test-fixtures.s3.eu-west-1.amazonaws.com/affiliates/latest.gz
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -12,16 +12,16 @@ http_interactions:
       Accept-Encoding:
       - ''
       User-Agent:
-      - aws-sdk-ruby3/3.2.0 ruby/2.4.1 x86_64-linux aws-sdk-s3/1.1.0
+      - aws-sdk-ruby3/3.11.0 ruby/2.4.2 x86_64-linux aws-sdk-s3/1.8.0
       Host:
-      - ad2games-cake-data-test-fixtures.s3-eu-west-1.amazonaws.com
+      - ad2games-cake-data-test-fixtures.s3.eu-west-1.amazonaws.com
       X-Amz-Date:
-      - 20170905T152346Z
+      - 20171201T173910Z
       X-Amz-Content-Sha256:
       - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=aws-access-key-id/20170905/eu-west-1/s3/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=8698c6c5361fb06cb76e22be01f1760d637f1690f68e66b38cfceff083410118
+      - AWS4-HMAC-SHA256 Credential=aws-access-key-id/20171201/eu-west-1/s3/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=d2abf035d5acc122c3f12da2297518c0f984c779928a3b4248a967d08f91c323
       Content-Length:
       - '0'
       Accept:
@@ -32,11 +32,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - "/y7g0JTU1cEnBHvzWaxMN4weYM+DP20eqIB9ou5+ZzUOIwZjNfO49OivhQ5YT2QTfv+euCC+CZE="
+      - hfGhqB6OKSZWtCa1MZ9J+W7C3WR04MQldiAOG45zVFXZkbje7xtW5Pf6kI1mAL9bZUncTWeDCQw=
       X-Amz-Request-Id:
-      - EC1EF0F67454963A
+      - 6BBF9C0AA1036061
       Date:
-      - Tue, 05 Sep 2017 15:23:47 GMT
+      - Fri, 01 Dec 2017 17:39:11 GMT
       Last-Modified:
       - Thu, 20 Jul 2017 07:05:59 GMT
       Etag:
@@ -53,5 +53,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 05 Sep 2017 15:23:46 GMT
+  recorded_at: Fri, 01 Dec 2017 17:39:10 GMT
 recorded_with: VCR 3.0.3

@@ -39,7 +39,13 @@ RSpec.describe Importeur::ActiveRecordPostgresLoader do
 
   it 'only updates records that changed' do
     expect(model).to receive(:with_deleted).and_return(lookup_relation)
-    expect(lookup_relation).to receive(:where).with(id: [1, 2]).and_return(records)
+    expect(lookup_relation)
+      .to receive(:joins)
+      .with(<<-SQL)
+        INNER JOIN (SELECT unnest(ARRAY[1,2]::int[]) AS primary_key) AS imported
+                  ON imported.primary_key = cake_offers.id
+      SQL
+      .and_return(records)
     expect(Time).to receive(:now).and_return(now)
 
     expect(records.first).to receive(:assign_attributes).with(id: 1, name: 'My Name')
@@ -54,7 +60,13 @@ RSpec.describe Importeur::ActiveRecordPostgresLoader do
     expect(records.last).not_to receive(:imported_at=)
     expect(records.last).not_to receive(:save!)
 
-    expect(model).to receive(:joins).and_return(deletion_relation)
+    expect(model)
+      .to receive(:joins)
+      .with(<<-SQL)
+        LEFT JOIN (SELECT unnest(ARRAY[1,2]::int[]) AS primary_key) AS imported
+                  ON imported.primary_key = cake_offers.id
+      SQL
+      .and_return(deletion_relation)
     expect(deletion_relation)
       .to receive(:where)
       .with('imported.primary_key' => nil)

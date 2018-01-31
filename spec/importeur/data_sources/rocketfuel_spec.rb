@@ -12,8 +12,14 @@ RSpec.describe Importeur::DataSources::Rocketfuel do
   let(:params) { { 'filter' => 'value' } }
 
   before do
-    allow(rocketfuel_service).to receive(:get_all).with({}).and_return([company_resource])
-    allow(rocketfuel_service).to receive(:get_all).with(params).and_return([specific_company_resource])
+    allow(rocketfuel_service)
+      .to receive(:get_all)
+      .with({})
+      .and_return([company_resource])
+    allow(rocketfuel_service)
+      .to receive(:get_all)
+      .with(params)
+      .and_return([specific_company_resource])
   end
 
   describe '#items' do
