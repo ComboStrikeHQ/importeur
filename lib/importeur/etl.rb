@@ -12,7 +12,7 @@ module Importeur
       extracted = extractor.call
       return if extracted.nil?
       transformed = extracted.lazy.flat_map do |entity|
-        transformer.call(entity)
+        transformer.call(entity) || []
       end
       loader.call(transformed.lazy)
     end

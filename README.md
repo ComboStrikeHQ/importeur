@@ -38,7 +38,10 @@ Importeur::ETL.new(
 All three only need to have a `call` method and, hence, can be simple Procs.
 The extractor should return something enumerable, which is then iterated over
 and each item passed into the transformer. The loader receives the enumerable
-result of that.
+result of that. If the transformer returns `nil` or `false` that element is 
+skipped and not received by the loader. The transformer can also return an 
+array of elements, so a single element from extractor can be received as 
+multiple elements by the loader.
 
 So far a more or less generic `Extractor` exists.
 

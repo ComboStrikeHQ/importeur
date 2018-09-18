@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+### Add
+- Allow transformer to skip entries by returning `nil` or `false`. 
 
 ## [0.1.1] - 2018-01-31
 ### Changed
