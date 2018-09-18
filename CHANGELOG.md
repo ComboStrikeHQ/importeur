@@ -12,7 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [0.1.0] - 2017-10-26
 ### Added
-- Initial release.
+- Generic extractor (Importeur::Extractor).
+- Appnexus, Rocketfuel and Combined data sources.
+- ActiveRecord PostgreSQL loader.
+- Main ETL class (API).
 
 [Unreleased]: https://github.com/ad2games/importeur/compare/v0.1.1...HEAD
 [0.1.1]: https://github.com/ad2games/importeur/compare/v0.1.0...v0.1.1
