@@ -17,8 +17,7 @@ RSpec.describe Importeur::ETL do
   let(:extracted_item_2) { instance_double(Object) }
   let(:extracted_item_3) { instance_double(Object) }
   let(:transformed_item_1) { instance_double(Hash) }
-  let(:transformed_item_2) { nil }
-  let(:transformed_item_3) { instance_double(Hash) }
+  let(:transformed_item_2) { instance_double(Hash) }
 
   context 'with new data' do
     before do
@@ -31,12 +30,27 @@ RSpec.describe Importeur::ETL do
       expect(transformer).to receive(:call).with(extracted_item_1)
         .and_return(transformed_item_1)
       expect(transformer).to receive(:call).with(extracted_item_2)
-        .and_return(transformed_item_2)
+        .and_return(nil)
       expect(transformer).to receive(:call).with(extracted_item_3)
-        .and_return(transformed_item_3)
+        .and_return(transformed_item_2)
       expect(loader).to receive(:call) do |arg|
         expect(arg).to be_a(Enumerator::Lazy)
-        expect(arg.to_a).to eq([transformed_item_1, transformed_item_3])
+        expect(arg.to_a).to eq([transformed_item_1, transformed_item_2])
+      end
+
+      etl.call
+    end
+
+    it 'compacts enumerables returned form the transformer' do
+      expect(transformer).to receive(:call).with(extracted_item_1)
+        .and_return([transformed_item_1])
+      expect(transformer).to receive(:call).with(extracted_item_2)
+        .and_return([nil, transformed_item_2])
+      expect(transformer).to receive(:call).with(extracted_item_3)
+        .and_return([nil])
+      expect(loader).to receive(:call) do |arg|
+        expect(arg).to be_a(Enumerator::Lazy)
+        expect(arg.to_a).to eq([transformed_item_1, transformed_item_2])
       end
 
       etl.call
