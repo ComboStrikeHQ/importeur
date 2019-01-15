@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'activerecord', '<5'
+  spec.add_development_dependency 'acts_as_paranoid'
   spec.add_development_dependency 'appnexusapi'
   spec.add_development_dependency 'bucket_cake'
   spec.add_development_dependency 'bundler', '~> 1.15'
