@@ -64,8 +64,7 @@ It takes as arguments a data source that needs to implement
 
 An `ActiveRecordPostgresLoader` exists, that has a few very specific
 dependencies. As the name suggests, it imports data into a Postgres database
-using `ActiveRecord`. Additionally, the model used, needs to use
-`acts_as_paranoid`.
+using `ActiveRecord`. Additionally, it supports `acts_as_paranoid` (optional).
 
 Example use-cases can be found in the `spec/integration` directory.
 
