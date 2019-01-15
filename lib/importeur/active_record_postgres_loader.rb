@@ -66,7 +66,8 @@ module Importeur
     end
 
     def paranoid?
-      @paranoid ||= model.ancestors.map(&:to_s).include?('ActsAsParanoid::Core')
+      return @paranoid if defined?(@paranoid)
+      @paranoid = model.ancestors.map(&:to_s).include?('ActsAsParanoid::Core')
     end
   end
 end
