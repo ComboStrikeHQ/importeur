@@ -9,5 +9,5 @@ gemspec
 
 group :development, :test do
   gem 'rspec_junit_formatter', '0.2.2'
-  gem 'rubocop-ci', github: 'ad2games/rubocop-ci'
+  gem 'rubocop-ci', github: 'ComboStrikeHQ/rubocop-ci'
 end
